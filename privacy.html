@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – HLN Abonnement Blocker</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { text-align: center; }
+    h2 { margin-top: 20px; }
+    p { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy – HLN Abonnement Blocker</h1>
+  <p>This privacy policy describes how the "HLN Abonnement Blocker" Chrome extension (hereinafter "the extension") handles your data.</p>
+  <h2>Overview</h2>
+  <p>The extension is designed to toggle (via a switch) a blocker for subscription popups on HLN.be. It does not collect, store, or transmit any personal or usage data.</p>
+  <h2>Data Collection &amp; Usage</h2>
+  <p>• <strong>No Data Collected:</strong> The extension does not collect or store any user data. It only uses Chrome's "storage" permission (via chrome.storage.sync) to save your toggle preference (enabled or disabled) locally on your device.</p>
+  <p>• <strong>No Third-Party Services:</strong> The extension does not communicate with any third-party servers or services.</p>
+  <h2>Permissions</h2>
+  <p>The extension requests the following permissions:</p>
+  <ul>
+    <li><strong>storage</strong> – Used to save your toggle preference (enabled or disabled) locally.</li>
+    <li><strong>scripting</strong> – Used (if needed) to inject or remove a content script on HLN.be.</li>
+    <li><strong>activeTab</strong> – Used to reload the current tab (on HLN.be) when you toggle the blocker.</li>
+  </ul>
+  <p>Additionally, the extension declares a "host_permission" (https://www.hln.be/*) so that it can run its content script on HLN.be.</p>
+  <h2>Contact</h2>
+  <p>If you have any questions or concerns regarding this privacy policy, please contact the author (Robin) via the extension's homepage or GitHub repository.</p>
+  <footer style="margin-top: 30px; text-align: center; font-size: 0.8em; color: #666;">
+    <p>Made by Robin with &hearts;</p>
+  </footer>
+</body>
+</html> 
