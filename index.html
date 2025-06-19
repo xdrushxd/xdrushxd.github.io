@@ -36,7 +36,9 @@
   <section id="home" class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title" data-nl="Welkom bij RaesNV" data-en="Welcome to RaesNV">Welkom bij <span class="highlight">RaesNV</span></h1>
+        <h1 class="hero-title">
+          <span class="preserve-html" data-nl="Welkom bij " data-en="Welcome to ">Welkom bij </span><span class="highlight">RaesNV</span>
+        </h1>
         <p class="hero-subtitle" data-nl="Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën." data-en="We develop innovative software solutions with focus on user-friendliness and modern technologies.">Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën.</p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary" data-nl="Bekijk Onze Projecten" data-en="View Our Projects">Bekijk Onze Projecten</a>
@@ -249,7 +251,17 @@
       elements.forEach(element => {
         const translation = element.getAttribute(`data-${currentLanguage}`);
         if (translation) {
-          element.textContent = translation;
+          // Check if element has preserve-html class or contains HTML elements
+          if (element.classList.contains('preserve-html') || element.children.length > 0) {
+            // Only update the text content, preserve HTML structure
+            const textNodes = Array.from(element.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+            if (textNodes.length > 0) {
+              textNodes[0].textContent = translation;
+            }
+          } else {
+            // No HTML elements, safe to update text content
+            element.textContent = translation;
+          }
         }
       });
     }
