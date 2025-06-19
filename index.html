@@ -110,8 +110,16 @@
             Pin My Ride helpt gebruikers om nooit meer hun auto kwijt te raken. De app slaat de exacte parkeerlocatie op, inclusief foto's en notities. Via een widget op het homescherm kunnen gebruikers altijd zien hoe ver ze van hun auto verwijderd zijn.
           </p>
           <div class="project-screenshots">
-            <img src="screenshot1.png" alt="Pin My Ride Screenshot 1" class="screenshot">
-            <img src="screenshot2.png" alt="Pin My Ride Screenshot 2" class="screenshot">
+            <div class="slideshow-container">
+              <img src="screenshot1.png" alt="Pin My Ride Screenshot 1" class="screenshot active">
+              <img src="screenshot2.png" alt="Pin My Ride Screenshot 2" class="screenshot">
+              <button class="slideshow-nav prev" onclick="changeSlide(this, -1)">‹</button>
+              <button class="slideshow-nav next" onclick="changeSlide(this, 1)">›</button>
+            </div>
+            <div class="slideshow-dots">
+              <span class="dot active" onclick="currentSlide(this, 0)"></span>
+              <span class="dot" onclick="currentSlide(this, 1)"></span>
+            </div>
           </div>
           <div class="project-links">
             <a href="https://play.google.com/store/apps/details?id=com.vibecoding.pinmyride" target="_blank" class="btn btn-store">
@@ -134,8 +142,16 @@
             De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens.
           </p>
           <div class="project-screenshots">
-            <img src="HLN_popup.png" alt="HLN Blocker Screenshot 1" class="screenshot">
-            <img src="PopUp.png" alt="HLN Blocker Screenshot 2" class="screenshot">
+            <div class="slideshow-container">
+              <img src="HLN_popup.png" alt="HLN Blocker Screenshot 1" class="screenshot active">
+              <img src="PopUp.png" alt="HLN Blocker Screenshot 2" class="screenshot">
+              <button class="slideshow-nav prev" onclick="changeSlide(this, -1)">‹</button>
+              <button class="slideshow-nav next" onclick="changeSlide(this, 1)">›</button>
+            </div>
+            <div class="slideshow-dots">
+              <span class="dot active" onclick="currentSlide(this, 0)"></span>
+              <span class="dot" onclick="currentSlide(this, 1)"></span>
+            </div>
           </div>
           <div class="project-links">
             <a href="https://chromewebstore.google.com/detail/pncnfbogmcblmjpbdojnloepahbfdogb?utm_source=item-share-cb" target="_blank" class="btn btn-store chrome">
@@ -155,8 +171,7 @@
               <span class="project-category" data-nl="Minecraft Mod" data-en="Minecraft Mod">Minecraft Mod</span>
             </div>
           </div>
-          <p class="project-description" data-nl="🌟 Cobblemon Capture Notification tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!" data-en="🌟 Cobblemon Capture Notification takes your Minecraft server to the next level by turning rare Pokémon catches into exciting community moments. When a player catches a special Pokémon, everyone online gets a vibrant, color-coded notification!">
-            🌟 <strong>Cobblemon Capture Notification</strong> tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!
+          <p class="project-description" data-nl="Cobblemon Capture Notification tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!" data-en="Cobblemon Capture Notification takes your Minecraft server to the next level by turning rare Pokémon catches into exciting community moments. When a player catches a special Pokémon, everyone online gets a vibrant, color-coded notification!">
           </p>
           <div class="features-list">
             <div class="feature-item">
@@ -264,8 +279,8 @@
               textNodes[0].textContent = translation;
             }
           } else {
-            // No HTML elements, safe to update text content
-            element.textContent = translation;
+            // For elements without HTML children, replace the entire content
+            element.innerHTML = translation;
           }
         }
       });
@@ -325,6 +340,77 @@
         navbar.classList.remove('scrolled');
       }
     });
+
+    // Slideshow functionality
+    function changeSlide(button, direction) {
+      const container = button.closest('.slideshow-container');
+      const slides = container.querySelectorAll('.screenshot');
+      const dots = container.parentElement.querySelectorAll('.dot');
+      let currentIndex = 0;
+      
+      // Find current active slide
+      slides.forEach((slide, index) => {
+        if (slide.classList.contains('active')) {
+          currentIndex = index;
+        }
+      });
+      
+      // Calculate new index
+      let newIndex = currentIndex + direction;
+      if (newIndex >= slides.length) newIndex = 0;
+      if (newIndex < 0) newIndex = slides.length - 1;
+      
+      // Update slides
+      slides[currentIndex].classList.remove('active');
+      slides[newIndex].classList.add('active');
+      
+      // Update dots
+      dots[currentIndex].classList.remove('active');
+      dots[newIndex].classList.add('active');
+    }
+
+    function currentSlide(dot, index) {
+      const container = dot.closest('.project-screenshots').querySelector('.slideshow-container');
+      const slides = container.querySelectorAll('.screenshot');
+      const dots = dot.parentElement.querySelectorAll('.dot');
+      
+      // Remove active from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      // Add active to selected slide and dot
+      slides[index].classList.add('active');
+      dot.classList.add('active');
+    }
+
+    // Auto-advance slideshows
+    function autoAdvanceSlideshows() {
+      const slideshows = document.querySelectorAll('.slideshow-container');
+      slideshows.forEach(container => {
+        const slides = container.querySelectorAll('.screenshot');
+        const dots = container.parentElement.querySelectorAll('.dot');
+        
+        if (slides.length > 1) {
+          let currentIndex = 0;
+          slides.forEach((slide, index) => {
+            if (slide.classList.contains('active')) {
+              currentIndex = index;
+            }
+          });
+          
+          let nextIndex = (currentIndex + 1) % slides.length;
+          
+          slides[currentIndex].classList.remove('active');
+          slides[nextIndex].classList.add('active');
+          
+          dots[currentIndex].classList.remove('active');
+          dots[nextIndex].classList.add('active');
+        }
+      });
+    }
+
+    // Start auto-advance every 3 seconds
+    setInterval(autoAdvanceSlideshows, 3000);
   </script>
 </body>
 </html> 
