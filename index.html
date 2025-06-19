@@ -17,10 +17,14 @@
         <span class="logo-text">RaesNV</span>
       </div>
       <div class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">Over Ons</a>
-        <a href="#projects" class="nav-link">Projecten</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link" data-nl="Home" data-en="Home">Home</a>
+        <a href="#about" class="nav-link" data-nl="Over Ons" data-en="About">Over Ons</a>
+        <a href="#projects" class="nav-link" data-nl="Projecten" data-en="Projects">Projecten</a>
+        <a href="#contact" class="nav-link" data-nl="Contact" data-en="Contact">Contact</a>
+        <button onclick="toggleLanguage()" class="language-toggle" title="Toggle Language">
+          <i class="fas fa-globe"></i>
+          <span class="lang-text">EN</span>
+        </button>
         <button onclick="toggleDarkMode()" class="theme-toggle">
           <i class="fas fa-moon"></i>
         </button>
@@ -32,11 +36,11 @@
   <section id="home" class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">Welkom bij <span class="highlight">RaesNV</span></h1>
-        <p class="hero-subtitle">Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën.</p>
+        <h1 class="hero-title" data-nl="Welkom bij RaesNV" data-en="Welcome to RaesNV">Welkom bij <span class="highlight">RaesNV</span></h1>
+        <p class="hero-subtitle" data-nl="Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën." data-en="We develop innovative software solutions with focus on user-friendliness and modern technologies.">Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Bekijk Onze Projecten</a>
-          <a href="#contact" class="btn btn-secondary">Neem Contact Op</a>
+          <a href="#projects" class="btn btn-primary" data-nl="Bekijk Onze Projecten" data-en="View Our Projects">Bekijk Onze Projecten</a>
+          <a href="#contact" class="btn btn-secondary" data-nl="Neem Contact Op" data-en="Contact Us">Neem Contact Op</a>
         </div>
       </div>
       <div class="hero-image">
@@ -49,27 +53,27 @@
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Over Ons</h2>
-        <p class="section-subtitle">Ontdek wat RaesNV uniek maakt</p>
+        <h2 class="section-title" data-nl="Over Ons" data-en="About Us">Over Ons</h2>
+        <p class="section-subtitle" data-nl="Ontdek wat RaesNV uniek maakt" data-en="Discover what makes RaesNV unique">Ontdek wat RaesNV uniek maakt</p>
       </div>
       <div class="about-content">
         <div class="about-text">
-          <p>RaesNV ontwikkelt mobiele applicaties en software-oplossingen met focus op gebruiksvriendelijkheid en innovatie. Wij geloven in het creëren van producten die niet alleen functioneel zijn, maar ook een plezier om te gebruiken.</p>
+          <p data-nl="RaesNV ontwikkelt mobiele applicaties en software-oplossingen met focus op gebruiksvriendelijkheid en innovatie. Wij geloven in het creëren van producten die niet alleen functioneel zijn, maar ook een plezier om te gebruiken." data-en="RaesNV develops mobile applications and software solutions with focus on user-friendliness and innovation. We believe in creating products that are not only functional, but also a pleasure to use.">RaesNV ontwikkelt mobiele applicaties en software-oplossingen met focus op gebruiksvriendelijkheid en innovatie. Wij geloven in het creëren van producten die niet alleen functioneel zijn, maar ook een plezier om te gebruiken.</p>
           <div class="about-features">
             <div class="feature">
               <i class="fas fa-mobile-alt"></i>
-              <h3>Mobiele Apps</h3>
-              <p>Native en cross-platform applicaties</p>
+              <h3 data-nl="Mobiele Apps" data-en="Mobile Apps">Mobiele Apps</h3>
+              <p data-nl="Native en cross-platform applicaties" data-en="Native and cross-platform applications">Native en cross-platform applicaties</p>
             </div>
             <div class="feature">
               <i class="fas fa-puzzle-piece"></i>
-              <h3>Browser Extensies</h3>
-              <p>Praktische Chrome-extensies</p>
+              <h3 data-nl="Browser Extensies" data-en="Browser Extensions">Browser Extensies</h3>
+              <p data-nl="Praktische Chrome-extensies" data-en="Practical Chrome extensions">Praktische Chrome-extensies</p>
             </div>
             <div class="feature">
               <i class="fas fa-gamepad"></i>
-              <h3>Gaming Mods</h3>
-              <p>Minecraft en gaming integraties</p>
+              <h3 data-nl="Gaming Mods" data-en="Gaming Mods">Gaming Mods</h3>
+              <p data-nl="Minecraft en gaming integraties" data-en="Minecraft and gaming integrations">Minecraft en gaming integraties</p>
             </div>
           </div>
         </div>
@@ -81,8 +85,8 @@
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Onze Projecten</h2>
-        <p class="section-subtitle">Ontdek onze portfolio van innovatieve oplossingen</p>
+        <h2 class="section-title" data-nl="Onze Projecten" data-en="Our Projects">Onze Projecten</h2>
+        <p class="section-subtitle" data-nl="Ontdek onze portfolio van innovatieve oplossingen" data-en="Discover our portfolio of innovative solutions">Ontdek onze portfolio van innovatieve oplossingen</p>
       </div>
       
       <div class="projects-grid">
@@ -92,10 +96,10 @@
             <img src="pinmyride-logo.png" alt="Pin My Ride Logo" class="project-logo">
             <div class="project-info">
               <h3 class="project-title">Pin My Ride</h3>
-              <span class="project-category">Mobiele App</span>
+              <span class="project-category" data-nl="Mobiele App" data-en="Mobile App">Mobiele App</span>
             </div>
           </div>
-          <p class="project-description">
+          <p class="project-description" data-nl="Pin My Ride helpt gebruikers om nooit meer hun auto kwijt te raken. De app slaat de exacte parkeerlocatie op, inclusief foto's en notities. Via een widget op het homescherm kunnen gebruikers altijd zien hoe ver ze van hun auto verwijderd zijn." data-en="Pin My Ride helps users never lose their car again. The app saves the exact parking location, including photos and notes. Through a widget on the home screen, users can always see how far they are from their car.">
             Pin My Ride helpt gebruikers om nooit meer hun auto kwijt te raken. De app slaat de exacte parkeerlocatie op, inclusief foto's en notities. Via een widget op het homescherm kunnen gebruikers altijd zien hoe ver ze van hun auto verwijderd zijn.
           </p>
           <div class="project-screenshots">
@@ -116,10 +120,10 @@
             <img src="hln-blocker-logo.png" alt="HLN Blocker Logo" class="project-logo">
             <div class="project-info">
               <h3 class="project-title">HLN Abonnement Blocker</h3>
-              <span class="project-category">Chrome Extensie</span>
+              <span class="project-category" data-nl="Chrome Extensie" data-en="Chrome Extension">Chrome Extensie</span>
             </div>
           </div>
-          <p class="project-description">
+          <p class="project-description" data-nl="De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens." data-en="The HLN Subscription Blocker is a Chrome extension that allows you to easily block or allow the subscription popup on HLN.be via a convenient toggle. The extension does not collect or store any user data.">
             De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens.
           </p>
           <div class="project-screenshots">
@@ -131,7 +135,7 @@
               <i class="fab fa-chrome"></i>
               Chrome Web Store
             </a>
-            <a href="privacy.html" class="btn btn-secondary">Privacy Policy</a>
+            <a href="privacy.html" class="btn btn-secondary" data-nl="Privacy Policy" data-en="Privacy Policy">Privacy Policy</a>
           </div>
         </div>
 
@@ -141,33 +145,33 @@
             <img src="cobblemon-logo.png" alt="Cobblemon Logo" class="project-logo">
             <div class="project-info">
               <h3 class="project-title">Cobblemon Capture Notification</h3>
-              <span class="project-category">Minecraft Mod</span>
+              <span class="project-category" data-nl="Minecraft Mod" data-en="Minecraft Mod">Minecraft Mod</span>
             </div>
           </div>
-          <p class="project-description">
+          <p class="project-description" data-nl="🌟 Cobblemon Capture Notification tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!" data-en="🌟 Cobblemon Capture Notification takes your Minecraft server to the next level by turning rare Pokémon catches into exciting community moments. When a player catches a special Pokémon, everyone online gets a vibrant, color-coded notification!">
             🌟 <strong>Cobblemon Capture Notification</strong> tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!
           </p>
           <div class="features-list">
             <div class="feature-item">
               <span class="feature-icon">🎨</span>
               <div class="feature-content">
-                <strong>Kleurgecodeerde notificaties:</strong>
+                <strong data-nl="Kleurgecodeerde notificaties:" data-en="Color-coded notifications:">Kleurgecodeerde notificaties:</strong>
                 <div class="color-codes">
-                  <span class="color-code shiny">Shiny: Goud</span>
-                  <span class="color-code legendary">Legendary: Lichtpaars</span>
-                  <span class="color-code ultra">Ultra Beast: Rood</span>
-                  <span class="color-code mythical">Mythical: Aqua</span>
-                  <span class="color-code ultra-rare">Ultra-Rare: Donkerpaars</span>
+                  <span class="color-code shiny" data-nl="Shiny: Goud" data-en="Shiny: Gold">Shiny: Goud</span>
+                  <span class="color-code legendary" data-nl="Legendary: Lichtpaars" data-en="Legendary: Light Purple">Legendary: Lichtpaars</span>
+                  <span class="color-code ultra" data-nl="Ultra Beast: Rood" data-en="Ultra Beast: Red">Ultra Beast: Rood</span>
+                  <span class="color-code mythical" data-nl="Mythical: Aqua" data-en="Mythical: Aqua">Mythical: Aqua</span>
+                  <span class="color-code ultra-rare" data-nl="Ultra-Rare: Donkerpaars" data-en="Ultra-Rare: Dark Purple">Ultra-Rare: Donkerpaars</span>
                 </div>
               </div>
             </div>
             <div class="feature-item">
               <span class="feature-icon">📝</span>
-              <span><strong>Volledig aanpasbare meldingen</strong>: Stel zelf het berichtformaat in via het configuratiebestand.</span>
+              <span data-nl="Volledig aanpasbare meldingen: Stel zelf het berichtformaat in via het configuratiebestand." data-en="Fully customizable notifications: Set your own message format via the configuration file."><strong data-nl="Volledig aanpasbare meldingen" data-en="Fully customizable notifications">Volledig aanpasbare meldingen</strong>: Stel zelf het berichtformaat in via het configuratiebestand.</span>
             </div>
             <div class="feature-item">
               <span class="feature-icon">🔔</span>
-              <span><strong>Individuele notificaties aan/uit</strong>: Bepaal per Pokémon-type welke meldingen getoond worden.</span>
+              <span data-nl="Individuele notificaties aan/uit: Bepaal per Pokémon-type welke meldingen getoond worden." data-en="Individual notifications on/off: Determine which notifications are shown per Pokémon type."><strong data-nl="Individuele notificaties aan/uit" data-en="Individual notifications on/off">Individuele notificaties aan/uit</strong>: Bepaal per Pokémon-type welke meldingen getoond worden.</span>
             </div>
           </div>
           <div class="project-links">
@@ -185,21 +189,21 @@
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">Klaar om samen te werken? Neem contact met ons op</p>
+        <h2 class="section-title" data-nl="Contact" data-en="Contact">Contact</h2>
+        <p class="section-subtitle" data-nl="Klaar om samen te werken? Neem contact met ons op" data-en="Ready to work together? Get in touch with us">Klaar om samen te werken? Neem contact met ons op</p>
       </div>
       <div class="contact-content">
         <div class="contact-info">
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
             <div>
-              <h3>Email</h3>
+              <h3 data-nl="Email" data-en="Email">Email</h3>
               <a href="mailto:raesnv@outlook.be">raesnv@outlook.be</a>
             </div>
           </div>
         </div>
         <div class="contact-form">
-          <p>Voor vragen, ondersteuning of samenwerkingsmogelijkheden, aarzel niet om contact op te nemen. Wij zijn altijd bereid om te helpen!</p>
+          <p data-nl="Voor vragen, ondersteuning of samenwerkingsmogelijkheden, aarzel niet om contact op te nemen. Wij zijn altijd bereid om te helpen!" data-en="For questions, support or collaboration opportunities, don't hesitate to contact us. We are always ready to help!">Voor vragen, ondersteuning of samenwerkingsmogelijkheden, aarzel niet om contact op te nemen. Wij zijn altijd bereid om te helpen!</p>
         </div>
       </div>
     </div>
@@ -214,13 +218,13 @@
           <span class="footer-logo-text">RaesNV</span>
         </div>
         <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#about">Over Ons</a>
-          <a href="#projects">Projecten</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" data-nl="Home" data-en="Home">Home</a>
+          <a href="#about" data-nl="Over Ons" data-en="About">Over Ons</a>
+          <a href="#projects" data-nl="Projecten" data-en="Projects">Projecten</a>
+          <a href="#contact" data-nl="Contact" data-en="Contact">Contact</a>
         </div>
         <div class="footer-copyright">
-          <p>&copy; 2025 RaesNV. Alle rechten voorbehouden.</p>
+          <p data-nl="&copy; 2025 RaesNV. Alle rechten voorbehouden." data-en="&copy; 2025 RaesNV. All rights reserved.">&copy; 2025 RaesNV. Alle rechten voorbehouden.</p>
         </div>
       </div>
     </div>
@@ -228,6 +232,28 @@
 
   <!-- JavaScript -->
   <script>
+    let currentLanguage = 'nl'; // Default language
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === 'nl' ? 'en' : 'nl';
+      updateLanguage();
+      localStorage.setItem('language', currentLanguage);
+      
+      // Update language toggle button
+      const langText = document.querySelector('.lang-text');
+      langText.textContent = currentLanguage === 'nl' ? 'EN' : 'NL';
+    }
+
+    function updateLanguage() {
+      const elements = document.querySelectorAll('[data-nl][data-en]');
+      elements.forEach(element => {
+        const translation = element.getAttribute(`data-${currentLanguage}`);
+        if (translation) {
+          element.textContent = translation;
+        }
+      });
+    }
+
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
@@ -254,12 +280,22 @@
       });
     });
 
-    // Initialize dark mode
+    // Initialize dark mode and language
     window.onload = function () {
+      // Initialize dark mode
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
         const icon = document.querySelector('.theme-toggle i');
         icon.className = 'fas fa-sun';
+      }
+      
+      // Initialize language
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage) {
+        currentLanguage = savedLanguage;
+        updateLanguage();
+        const langText = document.querySelector('.lang-text');
+        langText.textContent = currentLanguage === 'nl' ? 'EN' : 'NL';
       }
     }
 
