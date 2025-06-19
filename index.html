@@ -80,6 +80,31 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: #1f1f1f;
+      color: white;
+    }
+
+    body.dark-mode h2 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .playstore-link {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    body.dark-mode .playstore-link:hover {
+      background-color: #388e3c;
+    }
   </style>
 </head>
 <body>
@@ -112,30 +137,51 @@
       Bekijk op Google Play
     </a>
   </section>
-  
- <section>
+
+  <section>
     <h2>HLN Abonnement Blocker (Chrome Extensie)</h2>
     <p>
       De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens.
     </p>
-   
-     <div class="app-screenshot">
+
+    <div class="app-screenshot">
       <img src="HLN_popup (1).png" alt="Screenshot 1">
       <img src="PopUp (1).png" alt="Screenshot 2">
     </div>
-   
+
     <a href="https://chromewebstore.google.com/detail/pncnfbogmcblmjpbdojnloepahbfdogb?utm_source=item-share-cb" target="_blank" class="playstore-link" style="background-color:#4caf50; margin-right: 10px;">Bekijk in Chrome Web Store</a>
     <a href="privacy.html" class="playstore-link" style="background-color:#2196f3;">Privacy Policy</a>
   </section>
-  
+
   <section>
     <h2>Contact</h2>
     <p>Voor vragen of ondersteuning, neem contact op via: <a href="mailto:raesnv@outlook.be">raesnv@outlook.be</a></p>
   </section>
 
+  <!-- Dark mode toggle button -->
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <button onclick="toggleDarkMode()" style="padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: bold; cursor: pointer;">
+      🌙 Toggle Dark Mode
+    </button>
+  </div>
+
   <footer>
     &copy; 2025 RaesNV
   </footer>
+
+  <!-- JavaScript to handle dark mode -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    }
+  </script>
 
 </body>
 </html>
