@@ -3,111 +3,275 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RaesNV</title>
+  <title>RaesNV - Professional Software Development</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-  <header>
-    <img src="CompanyLogo2.png" alt="RaesNV Logo" class="logo">
-    <h1>Welkom bij RaesNV</h1>
-    
-      <!-- Dark mode toggle button -->
-  <div style="text-align:center; margin-bottom: 2rem;">
-    <button onclick="toggleDarkMode()" style="padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: bold; cursor: pointer;">
-      🌙 Toggle Dark Mode
-    </button>
-  </div>
-    
-  </header>
-
-  <section>
-    <h2>Over Ons</h2>
-    <p>RaesNV ontwikkelt mobiele applicaties met focus op gebruiksvriendelijkheid en innovatie.</p>
-  </section>
-
-  <section>
-    <h2>Onze Apps</h2>
-    <h3>Pin My Ride</h3>
-    <p>
-      Pin My Ride helpt gebruikers om nooit meer hun auto kwijt te raken.
-      De app slaat de exacte parkeerlocatie op, inclusief foto's en notities.
-      Via een widget op het homescherm kunnen gebruikers altijd zien hoe ver ze van hun auto verwijderd zijn.
-    </p>
-
-    <div class="app-screenshot">
-      <img src="screenshot1.png" alt="Screenshot 1">
-      <img src="screenshot2.png" alt="Screenshot 2">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="CompanyLogo2.png" alt="RaesNV Logo" class="logo-img">
+        <span class="logo-text">RaesNV</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">Over Ons</a>
+        <a href="#projects" class="nav-link">Projecten</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button onclick="toggleDarkMode()" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
     </div>
+  </nav>
 
-    <a href="https://play.google.com/store/apps/details?id=com.vibecoding.pinmyride" target="_blank" class="playstore-link">
-      Bekijk op Google Play
-    </a>
-  </section>
-
-  <section>
-    <h2>HLN Abonnement Blocker (Chrome Extensie)</h2>
-    <p>
-      De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens.
-    </p>
-
-    <div class="app-screenshot">
-      <img src="HLN_popup.png" alt="Screenshot 1">
-      <img src="PopUp.png" alt="Screenshot 2">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Welkom bij <span class="highlight">RaesNV</span></h1>
+        <p class="hero-subtitle">Wij ontwikkelen innovatieve software-oplossingen met focus op gebruiksvriendelijkheid en moderne technologieën.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Bekijk Onze Projecten</a>
+          <a href="#contact" class="btn btn-secondary">Neem Contact Op</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="CompanyLogo2.png" alt="RaesNV" class="hero-logo">
+      </div>
     </div>
-
-    <a href="https://chromewebstore.google.com/detail/pncnfbogmcblmjpbdojnloepahbfdogb?utm_source=item-share-cb" target="_blank" class="playstore-link" style="background-color:#4caf50; margin-right: 10px;">Bekijk in Chrome Web Store</a>
-    <a href="privacy.html" class="playstore-link" style="background-color:#2196f3;">Privacy Policy</a>
-  </section>
-<section>
-  <h2>Cobblemon Capture Notification</h2>
-  <p>
-    🌟 <strong>Cobblemon Capture Notification</strong> tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!
-  </p>
-  <ul>
-    <li>🎨 <strong>Kleurgecodeerde notificaties</strong>:<br>
-      <ul>
-        <li><span style="color:gold;">Shiny: Goud</span></li>
-        <li><span style="color:violet;">Legendary: Lichtpaars</span></li>
-        <li><span style="color:red;">Ultra Beast: Rood</span></li>
-        <li><span style="color:aqua;">Mythical: Aqua</span></li>
-        <li><span style="color:purple;">Ultra-Rare: Donkerpaars</span></li>
-      </ul>
-    </li>
-    <li>📝 <strong>Volledig aanpasbare meldingen</strong>: Stel zelf het berichtformaat in via het configuratiebestand.</li>
-    <li>🔔 <strong>Individuele notificaties aan/uit</strong>: Bepaal per Pokémon-type welke meldingen getoond worden.</li>
-  </ul>
-
-  <a href="https://modrinth.com/mod/cobblemon-capture-notification" target="_blank" class="playstore-link" style="background-color:#673ab7;">
-    Bekijk op Modrinth
-  </a>
-</section>
-  
-  <section>
-    <h2>Contact</h2>
-    <p>Voor vragen of ondersteuning, neem contact op via: <a href="mailto:raesnv@outlook.be">raesnv@outlook.be</a></p>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Over Ons</h2>
+        <p class="section-subtitle">Ontdek wat RaesNV uniek maakt</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>RaesNV ontwikkelt mobiele applicaties en software-oplossingen met focus op gebruiksvriendelijkheid en innovatie. Wij geloven in het creëren van producten die niet alleen functioneel zijn, maar ook een plezier om te gebruiken.</p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-mobile-alt"></i>
+              <h3>Mobiele Apps</h3>
+              <p>Native en cross-platform applicaties</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-puzzle-piece"></i>
+              <h3>Browser Extensies</h3>
+              <p>Praktische Chrome-extensies</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-gamepad"></i>
+              <h3>Gaming Mods</h3>
+              <p>Minecraft en gaming integraties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Onze Projecten</h2>
+        <p class="section-subtitle">Ontdek onze portfolio van innovatieve oplossingen</p>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Pin My Ride -->
+        <div class="project-card">
+          <div class="project-header">
+            <img src="pinmyride-logo.png" alt="Pin My Ride Logo" class="project-logo">
+            <div class="project-info">
+              <h3 class="project-title">Pin My Ride</h3>
+              <span class="project-category">Mobiele App</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Pin My Ride helpt gebruikers om nooit meer hun auto kwijt te raken. De app slaat de exacte parkeerlocatie op, inclusief foto's en notities. Via een widget op het homescherm kunnen gebruikers altijd zien hoe ver ze van hun auto verwijderd zijn.
+          </p>
+          <div class="project-screenshots">
+            <img src="screenshot1.png" alt="Pin My Ride Screenshot 1" class="screenshot">
+            <img src="screenshot2.png" alt="Pin My Ride Screenshot 2" class="screenshot">
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.vibecoding.pinmyride" target="_blank" class="btn btn-store">
+              <i class="fab fa-google-play"></i>
+              Google Play
+            </a>
+          </div>
+        </div>
 
+        <!-- HLN Blocker -->
+        <div class="project-card">
+          <div class="project-header">
+            <img src="hln-blocker-logo.png" alt="HLN Blocker Logo" class="project-logo">
+            <div class="project-info">
+              <h3 class="project-title">HLN Abonnement Blocker</h3>
+              <span class="project-category">Chrome Extensie</span>
+            </div>
+          </div>
+          <p class="project-description">
+            De HLN Abonnement Blocker is een Chrome-extensie waarmee je eenvoudig de abonnements-popup op HLN.be kunt blokkeren of toestaan via een handige schakelaar. De extensie verzamelt of bewaart geen gebruikersgegevens.
+          </p>
+          <div class="project-screenshots">
+            <img src="HLN_popup.png" alt="HLN Blocker Screenshot 1" class="screenshot">
+            <img src="PopUp.png" alt="HLN Blocker Screenshot 2" class="screenshot">
+          </div>
+          <div class="project-links">
+            <a href="https://chromewebstore.google.com/detail/pncnfbogmcblmjpbdojnloepahbfdogb?utm_source=item-share-cb" target="_blank" class="btn btn-store chrome">
+              <i class="fab fa-chrome"></i>
+              Chrome Web Store
+            </a>
+            <a href="privacy.html" class="btn btn-secondary">Privacy Policy</a>
+          </div>
+        </div>
 
-  <footer>
-    &copy; 2025 RaesNV
+        <!-- Cobblemon -->
+        <div class="project-card">
+          <div class="project-header">
+            <img src="cobblemon-logo.png" alt="Cobblemon Logo" class="project-logo">
+            <div class="project-info">
+              <h3 class="project-title">Cobblemon Capture Notification</h3>
+              <span class="project-category">Minecraft Mod</span>
+            </div>
+          </div>
+          <p class="project-description">
+            🌟 <strong>Cobblemon Capture Notification</strong> tilt jouw Minecraft-server naar een hoger niveau door zeldzame Pokémon-vangsten te veranderen in spannende communitymomenten. Wanneer een speler een speciaal Pokémon vangt, krijgt iedereen online een levendige, kleurgecodeerde melding!
+          </p>
+          <div class="features-list">
+            <div class="feature-item">
+              <span class="feature-icon">🎨</span>
+              <div class="feature-content">
+                <strong>Kleurgecodeerde notificaties:</strong>
+                <div class="color-codes">
+                  <span class="color-code shiny">Shiny: Goud</span>
+                  <span class="color-code legendary">Legendary: Lichtpaars</span>
+                  <span class="color-code ultra">Ultra Beast: Rood</span>
+                  <span class="color-code mythical">Mythical: Aqua</span>
+                  <span class="color-code ultra-rare">Ultra-Rare: Donkerpaars</span>
+                </div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📝</span>
+              <span><strong>Volledig aanpasbare meldingen</strong>: Stel zelf het berichtformaat in via het configuratiebestand.</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔔</span>
+              <span><strong>Individuele notificaties aan/uit</strong>: Bepaal per Pokémon-type welke meldingen getoond worden.</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://modrinth.com/mod/cobblemon-capture-notification" target="_blank" class="btn btn-store modrinth">
+              <i class="fas fa-download"></i>
+              Modrinth
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Klaar om samen te werken? Neem contact met ons op</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:raesnv@outlook.be">raesnv@outlook.be</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <p>Voor vragen, ondersteuning of samenwerkingsmogelijkheden, aarzel niet om contact op te nemen. Wij zijn altijd bereid om te helpen!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="CompanyLogo2.png" alt="RaesNV Logo" class="footer-logo-img">
+          <span class="footer-logo-text">RaesNV</span>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">Over Ons</a>
+          <a href="#projects">Projecten</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2025 RaesNV. Alle rechten voorbehouden.</p>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- JavaScript to handle dark mode -->
+  <!-- JavaScript -->
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+      
+      const icon = document.querySelector('.theme-toggle i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-moon';
+      }
     }
 
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Initialize dark mode
     window.onload = function () {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
+        const icon = document.querySelector('.theme-toggle i');
+        icon.className = 'fas fa-sun';
       }
     }
-  </script>
 
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
-</html>
+</html> 
