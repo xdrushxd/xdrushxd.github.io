@@ -2,332 +2,776 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Path Slider, an Android puzzle game by Raes Solutions.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy Policy for Path Slider, an Android puzzle game by Raes Solutions. How we handle ads, analytics, purchases and your rights.">
+    <meta name="theme-color" content="#0A0F2C">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Privacy Policy — Path Slider">
+    <meta property="og:description" content="Your privacy. Your game. How Path Slider handles ads, analytics, purchases and local progress.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xdrushxd.github.io/privacy-policy-Path-Slider.html">
+    <meta property="og:image" content="https://xdrushxd.github.io/privacy-assets/app-icon.svg">
     <title>Privacy Policy — Path Slider</title>
+    <link rel="icon" href="privacy-assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="privacy-assets/app-icon.svg">
+    <link rel="canonical" href="https://xdrushxd.github.io/privacy-policy-Path-Slider.html">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg-top: #0A0F2C;
+            --bg-bottom: #1B1145;
+            --glow: #3D8BFF;
+            --cyan: #22D3EE;
+            --violet: #9B6BFF;
+            --card: #161D45;
+            --card-border: rgba(255, 255, 255, 0.15);
+            --board: #111738;
+            --cell: #1D2552;
+            --text: #FFFFFF;
+            --muted: #B4BBD9;
+            --gold: #FFD84D;
+            --danger: #FF5C7A;
+            --success: #3DDC97;
+            --link: #8EC5FF;
+            --radius: 24px;
+            --max: 1120px;
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 50%, #fff5f0 100%);
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-top);
+            color: var(--text);
+            line-height: 1.7;
             min-height: 100vh;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 800px;
+        img { max-width: 100%; height: auto; }
+        a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
+        a:hover { color: var(--cyan); }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -48px;
+            background: var(--gold);
+            color: var(--bg-top);
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 800;
+            z-index: 30;
+        }
+        .skip:focus { top: 12px; }
+
+        .atmosphere {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            pointer-events: none;
+        }
+        .grid-dots {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.4px, transparent 1.5px);
+            background-size: 42px 42px;
+            background-position: 18px 22px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 70%);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: drift 14s linear infinite alternate;
+        }
+        .orb-a {
+            width: min(78vw, 560px);
+            height: min(78vw, 560px);
+            left: -10%;
+            top: 4%;
+            background: radial-gradient(circle, rgba(61, 139, 255, 0.22), transparent 70%);
+        }
+        .orb-b {
+            width: min(82vw, 600px);
+            height: min(82vw, 600px);
+            right: -16%;
+            bottom: 4%;
+            background: radial-gradient(circle, rgba(155, 107, 255, 0.24), transparent 70%);
+            animation-delay: -7s;
+        }
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(12%, 8%); }
+        }
+
+        .wrap {
+            width: min(var(--max), calc(100% - 28px));
+            max-width: 100%;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
+            padding: 14px 0 80px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 8px 8px 10px;
+            margin-bottom: 28px;
+            border-radius: 999px;
+            background: rgba(22, 29, 69, 0.82);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(18px);
+            position: sticky;
+            top: 10px;
+            z-index: 20;
+            flex-wrap: nowrap;
+            min-width: 0;
+            overflow: visible;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            text-decoration: none;
+            min-width: 0;
+        }
+        .brand img {
+            width: 40px;
+            height: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(255, 106, 0, 0.1);
+            box-shadow: 0 0 18px rgba(61, 139, 255, 0.35);
         }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #ff6a00;
+        .brand-name {
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            font-size: 0.78rem;
+            background: linear-gradient(90deg, #fff, var(--glow), var(--violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            white-space: nowrap;
         }
-
-        .game-icon {
-            font-size: 64px;
-            margin-bottom: 10px;
+        .top-actions { display: flex; gap: 6px; flex-wrap: nowrap; justify-content: flex-end; flex-shrink: 0; }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.84rem;
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            background: rgba(22, 29, 69, 0.9);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+        .pill.primary {
+            background: linear-gradient(90deg, var(--glow), var(--violet));
+            border-color: transparent;
+            box-shadow: 0 8px 24px rgba(61, 139, 255, 0.28);
+        }
+        .pill:hover { transform: translateY(-1px); }
 
+        .hero {
+            display: grid;
+            gap: 32px;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .kicker {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
         h1 {
-            color: #ff6a00;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: clamp(2.2rem, 8vw, 4.4rem);
+            line-height: 1.02;
+            letter-spacing: -0.045em;
+            font-weight: 900;
+            margin-bottom: 14px;
         }
-
-        .tagline {
-            color: #666;
-            font-size: 1.1em;
+        h1 span {
+            background: linear-gradient(90deg, #fff, var(--glow), var(--violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
-        h2 {
-            color: #ff6a00;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-left: 4px solid #ff6a00;
-            padding-left: 15px;
-        }
-
-        h3 {
-            color: #555;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul {
-            margin: 15px 0;
-            padding-left: 30px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .highlight-box {
-            background: #fff5f0;
-            border-left: 4px solid #ff6a00;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .contact-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .contact-info p {
-            text-align: left;
+        .lede {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 38rem;
+            margin-bottom: 18px;
             overflow-wrap: break-word;
         }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-            color: #666;
-            font-size: 0.9em;
+        .meta { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chip {
+            border-radius: 999px;
+            padding: 6px 12px;
+            background: rgba(255, 216, 77, 0.12);
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .chip.quiet {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--muted);
         }
 
-        .last-updated {
-            background: #fffbf0;
-            padding: 10px;
-            border-radius: 4px;
+        .board-wrap {
+            justify-self: center;
+            width: min(100%, 340px);
+            padding: 16px;
+            border-radius: 28px;
+            background: var(--board);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 18px 50px rgba(61, 139, 255, 0.2);
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            position: relative;
+        }
+        .cell {
+            aspect-ratio: 1;
+            background: var(--cell);
+            border-radius: 16px;
+            animation: fillCell 5.4s ease-in-out infinite;
+        }
+        .cell:nth-child(1) { animation-delay: 0s; }
+        .cell:nth-child(2) { animation-delay: 0.28s; }
+        .cell:nth-child(3) { animation-delay: 0.56s; }
+        .cell:nth-child(6) { animation-delay: 0.84s; }
+        .cell:nth-child(5) { animation-delay: 1.12s; }
+        .cell:nth-child(4) { animation-delay: 1.4s; }
+        .cell:nth-child(7) { animation-delay: 1.68s; }
+        .cell:nth-child(8) { animation-delay: 1.96s; }
+        .cell:nth-child(9) { animation-delay: 2.24s; }
+        @keyframes fillCell {
+            0%, 8% { background: var(--cell); box-shadow: none; }
+            18%, 72% { background: #2A3A72; box-shadow: inset 0 0 0 1px rgba(61,139,255,0.18); }
+            88%, 100% { background: var(--cell); box-shadow: none; }
+        }
+        .path {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            pointer-events: none;
+        }
+        .path-glow, .path-line {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .path-glow {
+            stroke: var(--glow);
+            stroke-width: 18;
+            opacity: 0.22;
+        }
+        .path-line {
+            stroke: url(#heroPath);
+            stroke-width: 9;
+            stroke-dasharray: 620;
+            stroke-dashoffset: 620;
+            animation: draw 5.4s ease-in-out infinite;
+        }
+        @keyframes draw {
+            0% { stroke-dashoffset: 620; }
+            55% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 0; }
+        }
+        .token {
+            position: absolute;
+            width: 28%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+        .token.start {
+            background: var(--gold);
+            color: var(--bg-top);
+            left: 4%;
+            top: 4%;
+            box-shadow: 0 0 0 8px rgba(255, 216, 77, 0.16);
+            animation: pulse 1.1s ease-in-out infinite alternate;
+        }
+        .token.end {
+            background: #fff;
+            color: var(--violet);
+            right: 4%;
+            bottom: 4%;
+            box-shadow: inset 0 0 0 6px var(--violet);
+        }
+        @keyframes pulse {
+            from { box-shadow: 0 0 0 6px rgba(255, 216, 77, 0.12); }
+            to { box-shadow: 0 0 0 11px rgba(255, 216, 77, 0.28); }
+        }
+        .board-caption {
             text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #ff6a00;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-top: 10px;
+            letter-spacing: 0.04em;
         }
 
-        a {
-            color: #ff6a00;
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+        .stat {
+            padding: 16px 18px;
+        }
+        .stat b {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .stat span { color: var(--muted); font-size: 0.92rem; }
+
+        .glass {
+            background: rgba(22, 29, 69, 0.82);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 22px;
+        }
+
+        .summary strong { color: var(--gold); }
+
+        .consent-callout {
+            background: linear-gradient(180deg, rgba(61, 139, 255, 0.16), rgba(22, 29, 69, 0.9));
+            border: 1px solid rgba(61, 139, 255, 0.4);
+            box-shadow: 0 0 24px rgba(61, 139, 255, 0.12);
+            margin: 16px 0 28px;
+        }
+        .consent-callout h2 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+            color: var(--cyan);
+        }
+
+        .layout {
+            display: grid;
+            gap: 22px;
+        }
+        nav.toc {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            align-content: start;
+        }
+        nav.toc a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
             text-decoration: none;
+            background: rgba(22, 29, 69, 0.75);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 10px 12px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            min-width: 0;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+            transition: border-color 0.2s ease, transform 0.2s ease;
         }
+        nav.toc a:hover, nav.toc a.active { border-color: var(--glow); }
+        nav.toc a.active { box-shadow: 0 0 0 1px rgba(61, 139, 255, 0.35); }
 
-        a:hover {
-            text-decoration: underline;
+        .icon {
+            width: 28px;
+            height: 28px;
+            flex: none;
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            background: rgba(61, 139, 255, 0.18);
         }
+        .icon svg { width: 16px; height: 16px; }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.3em;
-            }
-
-            body {
-                padding: 12px;
-            }
-
-            ul {
-                padding-left: 22px;
-            }
-
-            p {
-                text-align: left;
-            }
+        article section.card {
+            margin-bottom: 16px;
+            padding: 22px 22px 8px;
         }
+        .reveal { opacity: 1; transform: none; }
 
-        .notice {
-            background: #fff5f0;
-            border-left: 4px solid #ff6a00;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 18px 0;
+        h2 {
+            font-size: 1.28rem;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        .num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex: none;
+            background: #F5F7FF;
+            color: var(--bg-top);
+            font-size: 0.86rem;
+            font-weight: 800;
+            box-shadow: 0 0 0 3px rgba(255, 216, 77, 0.18);
+        }
+        h3 {
+            font-size: 1.02rem;
+            margin: 16px 0 8px;
+            color: var(--gold);
+        }
+        p, ul { margin-bottom: 14px; color: var(--muted); }
+        p strong, li strong { color: var(--text); }
+        ul { padding-left: 1.15rem; }
+        li { margin-bottom: 8px; }
+        li::marker { color: var(--glow); }
 
-        .meta {
-            color: #666;
+        .contact {
+            background: rgba(255, 216, 77, 0.08);
+            border: 1px solid rgba(255, 216, 77, 0.28);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .contact p { color: var(--text); margin-bottom: 8px; }
+        .contact span { color: var(--gold); }
+
+        footer {
             text-align: center;
+            color: var(--muted);
+            margin-top: 36px;
+            padding-top: 22px;
+            border-top: 1px solid var(--card-border);
+        }
+        footer img {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+        }
+        footer strong { color: var(--text); }
+
+        @media (max-width: 720px) {
+            .brand-name { display: none; }
+            .topbar {
+                border-radius: 20px;
+                backdrop-filter: none;
+                padding: 8px;
+                flex-wrap: wrap;
+            }
+            .top-actions {
+                margin-left: auto;
+            }
+            .pill { padding: 8px 12px; font-size: 0.8rem; }
+            h1 { font-size: clamp(2rem, 11vw, 3.1rem); }
+            .lede { font-size: 0.98rem; }
+        }
+        @media (min-width: 560px) and (max-width: 979px) {
+            nav.toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 720px) {
+            .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (min-width: 980px) {
+            .hero { grid-template-columns: 1.12fr 0.88fr; }
+            .layout { grid-template-columns: 280px minmax(0, 1fr); align-items: start; }
+            nav.toc {
+                position: sticky;
+                top: 78px;
+                grid-template-columns: 1fr;
+            }
+            .wrap { padding-top: 20px; }
         }
 
-        li {
-            line-height: 1.7;
-        }
-
-        .container {
-            overflow-wrap: anywhere;
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .orb, .path-line, .path-glow, .cell, .token.start, .pill { animation: none !important; }
+            .path-line { stroke-dashoffset: 0; }
+            .cell { background: #2A3A72; }
+            .pill:hover { transform: none; }
+            nav.toc a:hover { transform: none; }
         }
     </style>
 </head>
 <body>
-<main class="container">
-    <header class="header">
-        <div class="game-icon">🎮</div>
-        <h1>Path Slider</h1>
-        <p class="tagline">Privacy Policy</p>
-    </header>
-
-    <div class="last-updated">Last updated: October 17, 2026</div>
-
-    <div class="highlight-box">
-        <strong>At a glance:</strong> Path Slider stores game progress on your device. The free game uses Google AdMob advertising, and optional purchases use Google Play Billing. After the required consent in the EEA, UK and Switzerland — or after the consent flow finishes elsewhere — Google Firebase may process analytics, crash and performance data. We do not run an account system or collect your progress on our own servers.
+    <a class="skip" href="#policy">Skip to privacy policy</a>
+    <div class="atmosphere" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
     </div>
+    <div class="grid-dots" aria-hidden="true"></div>
 
-    <section>
-        <h2>1. Overview</h2>
-        <p>Path Slider is an offline puzzle game developed by <strong>RaesNV</strong>. The game does not require an account, and we do not operate servers that receive your game progress or other personal data. Your game progress is stored on your device. The free version uses Google AdMob to show advertisements, optional purchases are handled by Google Play, and Google Firebase may process analytics, crash and performance data as described below.</p>
-        <p>Google may process personal data through these services, as explained in this policy.</p>
-    </section>
+    <div class="wrap">
+        <header class="topbar">
+            <a class="brand" href="#top">
+                <img src="privacy-assets/logo.svg" width="40" height="40" alt="">
+                <span class="brand-name">PATH SLIDER</span>
+            </a>
+            <div class="top-actions">
+                <a class="pill" href="#toc">Contents</a>
+                <a class="pill primary" href="#contact">Contact</a>
+            </div>
+        </header>
 
-    <section>
-        <h2>2. Data stored on your device</h2>
-        <p>Path Slider stores the following data locally:</p>
-        <ul>
-            <li>Completed levels, stars, best times, statistics, achievements, streaks and hint credits</li>
-            <li>Settings such as sound, music, vibration and theme</li>
-            <li>A locally cached indication of your “Remove Ads” purchase status</li>
-            <li>Generated puzzle cache</li>
-        </ul>
-        <p>We do not receive this data. Depending on your Android backup settings, some app data may be included in a Google account backup or transferred to another device. Clearing app data or uninstalling normally removes local data, but copies in backups may remain subject to Google's backup settings and retention.</p>
-    </section>
+        <section class="hero" id="top">
+            <div>
+                <p class="kicker">Raes Solutions · Android puzzle game</p>
+                <h1>Your Privacy.<br><span>Your Game.</span></h1>
+                <p class="lede">Path Slider is an offline puzzle: draw one line through every cell. Progress stays on your phone. Ads, optional purchases and analytics are handled by Google services, with consent where the law requires it.</p>
+                <div class="meta">
+                    <span class="chip">Last updated: 17 October 2026</span>
+                    <span class="chip quiet">Version 1.0.4</span>
+                </div>
+            </div>
+            <div class="board-wrap" aria-hidden="true">
+                <div class="board">
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <svg class="path" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="heroPath" x1="0" y1="0" x2="100" y2="100">
+                                <stop offset="0" stop-color="#3D8BFF"/>
+                                <stop offset="0.55" stop-color="#22D3EE"/>
+                                <stop offset="1" stop-color="#9B6BFF"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="path-glow" d="M16.5 16.5 H83.5 V50 H16.5 V83.5 H83.5"/>
+                        <path class="path-line" d="M16.5 16.5 H83.5 V50 H16.5 V83.5 H83.5"/>
+                    </svg>
+                    <span class="token start">1</span>
+                    <span class="token end">2</span>
+                </div>
+                <p class="board-caption">Draw one line through every cell</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>3. Advertising — Google AdMob</h2>
-        <p>Unless you have purchased “Remove Ads”, Path Slider may display banner ads, interstitial ads and optional rewarded video ads supplied by Google AdMob (Google Ireland Limited and/or Google LLC).</p>
-        <p>To deliver, measure and secure advertisements, Google's Mobile Ads SDK may process:</p>
-        <ul>
-            <li>Device identifiers, potentially including your Android advertising ID</li>
-            <li>IP address, which may indicate an approximate location</li>
-            <li>Device and application details, such as device model, operating system, language and app version</li>
-            <li>Ad impressions, clicks, interactions and diagnostic information</li>
-        </ul>
-        <h3>Consent and privacy choices</h3>
-        <p>For users in the European Economic Area, United Kingdom and Switzerland, the app is designed to request advertising consent through Google's User Messaging Platform (UMP) / IAB Transparency and Consent Framework (TCF) before requesting ads where required. You may accept, reject or manage available consent choices. Declining personalised advertising does not prevent you from playing. Limited or non-personalised ads may still appear where legally permitted.</p>
-        <p>You can revisit your options using <strong>Settings → Ad privacy choices</strong> (where available in the installed version). Android also provides advertising ID controls in its privacy settings; the exact menu varies by device.</p>
-        <p>Rewarded video ads are optional and may provide an in-game reward such as a hint or extra time.</p>
-        <p>For more details, see <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps using its services</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
-    </section>
-
-    <section>
-        <h2>4. Analytics, crash and performance — Google Firebase</h2>
-        <p>If you allow analytics in the consent choices — or if you are outside a region where the consent form is required — the app may send limited event, crash and performance data to Google Firebase / Google Analytics (Google Ireland Limited and/or Google LLC). This helps us understand how people play, whether the app is stable, and how it performs. It is not used to create a Path Slider account.</p>
-        <p>The following Google Firebase products may be used:</p>
-        <ul>
-            <li><strong>Firebase Analytics / Google Analytics for Firebase</strong> — gameplay and usage events</li>
-            <li><strong>Firebase Crashlytics</strong> — crash reports and related diagnostic data</li>
-            <li><strong>Firebase Performance Monitoring</strong> — app start and performance traces</li>
-        </ul>
-        <p>Firebase may process:</p>
-        <ul>
-            <li>An app instance identifier (reset when you uninstall the app or when collection is disabled)</li>
-            <li>Gameplay events such as level start/end, tutorial progress, screen views and ad-load results (not puzzle solutions)</li>
-            <li>Coarse device data Google collects automatically: country derived from IP address, language, device model, operating system and app version</li>
-            <li>Crash stacks (Firebase Crashlytics) and performance traces (Firebase Performance Monitoring)</li>
-            <li>The Android advertising ID only when ad-related consent also allows it</li>
-        </ul>
-        <p>We do not send your name, email address, precise GPS location, purchase tokens, payment details or local puzzle solutions to Firebase.</p>
-        <h3>Consent in the EEA, United Kingdom and Switzerland</h3>
-        <p>Analytics, Crashlytics and Performance Monitoring are off by default. In the EEA, UK and Switzerland, the legal basis is consent (Article 6(1)(a) GDPR), collected through the same Google UMP / TCF form used for advertising. <strong>Advertising consent is not treated as analytics consent.</strong> Collection stays off until you grant the measurement purposes (TCF Purpose 1 together with Purpose 8 or 10).</p>
-        <p>Outside those regions, this processing may start after the UMP flow finishes, without a separate analytics form.</p>
-        <p>You can withdraw consent in <strong>Settings → Ad privacy choices</strong>. You can also reset your advertising ID in Android settings, or uninstall the app.</p>
-        <p>More information: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</p>
-    </section>
-
-    <section>
-        <h2>5. In-app purchases — Google Play Billing</h2>
-        <p>Path Slider offers an optional one-time “Remove Ads” purchase, processed by Google Play. We do not receive your payment card details. The app receives purchase status and a purchase token from Google Play to verify and restore purchases. Google's own handling of payment information is described in its <a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a> and <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
-    </section>
-
-    <section>
-        <h2>6. Sharing and third parties</h2>
-        <p>The “Share result” feature opens the Android share sheet with game-related text. No result is shared unless you choose a destination and complete the sharing action.</p>
-        <p>We do not sell your personal data. We do not send your local game progress to our own servers. We share data with the following Google service providers, as described in this policy:</p>
-        <ul>
-            <li><strong>Google AdMob</strong> — advertising</li>
-            <li><strong>Google Play Billing</strong> — the optional “Remove Ads” purchase</li>
-            <li><strong>Google Firebase / Google Analytics</strong> — analytics, crash reporting and performance monitoring, when analytics consent is granted or when a consent form is not required</li>
-        </ul>
-        <p>Any app you choose through Android's share sheet has its own privacy practices.</p>
-    </section>
-
-    <section>
-        <h2>7. Legal bases under the GDPR</h2>
-        <ul>
-            <li><strong>Local gameplay data:</strong> processing necessary to provide the game you request (Article 6(1)(b) GDPR), where personal data processing is involved.</li>
-            <li><strong>Personalised advertising and consent-based device access:</strong> consent (Article 6(1)(a) GDPR and applicable ePrivacy rules), which can be withdrawn.</li>
-            <li><strong>Analytics, crash reporting and performance monitoring:</strong> consent (Article 6(1)(a) GDPR) in the EEA, UK and Switzerland. Outside those regions, this processing may start after the UMP flow finishes, without a separate analytics form.</li>
-            <li><strong>Purchases:</strong> performance of a contract (Article 6(1)(b) GDPR).</li>
-        </ul>
-        <p>Google may act as an independent controller for certain processing and describes its own legal bases in its privacy documentation. Other advertising or analytics processing, where applicable, depends on the purposes and choices disclosed in the consent interface.</p>
-    </section>
-
-    <section>
-        <h2>8. Children</h2>
-        <p>Path Slider is not specifically directed to children under 13 or the applicable age of digital consent in their country. We do not knowingly request personal information directly from children. If you have concerns about a child's information, please contact us. Age-related obligations and ad settings must be configured consistently with the app's actual target audience in Google Play and AdMob.</p>
-    </section>
-
-    <section>
-        <h2>9. Your rights and choices</h2>
-        <p>Depending on applicable law, you may have rights to access, rectify, erase, restrict or port personal data, object to certain processing, withdraw consent and lodge a complaint with your data protection authority.</p>
-        <p>Because we do not maintain a user database, you can generally remove locally stored game data via <strong>Android Settings → Apps → Path Slider → Storage → Clear data</strong> or by uninstalling the app. Backup copies are managed through your device and Google account settings.</p>
-        <p>For data processed by Google AdMob, Google Play or Google Firebase / Google Analytics, consult the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, <a href="https://myaccount.google.com/">Google Account</a> and <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>. You can withdraw in-app consent via <strong>Settings → Ad privacy choices</strong>.</p>
-        <p>If you are in Belgium, you can also contact the <a href="https://www.dataprotectionauthority.be/">Belgian Data Protection Authority</a>.</p>
-    </section>
-
-    <section>
-        <h2>10. Security and international processing</h2>
-        <p>Local game data is kept in Android app storage, subject to Android's platform security protections. Google SDKs communicate over encrypted connections (HTTPS). No technical safeguard can guarantee absolute security.</p>
-        <p>Google services may process data outside your country. Please consult Google's privacy information for details of international transfers and applicable safeguards.</p>
-    </section>
-
-    <section>
-        <h2>11. Retention and deletion</h2>
-        <ul>
-            <li><strong>Local game data:</strong> generally remains until you clear the app data or uninstall the game, subject to device backups.</li>
-            <li><strong>Google AdMob and Google Play:</strong> we do not set the retention periods for data independently processed by those services; consult Google's privacy documentation and available controls.</li>
-            <li><strong>Google Firebase / Google Analytics:</strong> retention follows the retention setting of the Google Analytics property. Crashlytics crash reports and Performance Monitoring traces are retained according to Google's product settings. App instance identifiers are reset when you uninstall the app or when collection is disabled.</li>
-        </ul>
-        <p>To delete local game data, use Android Settings → Apps → Path Slider → Storage → Clear data, or uninstall the app. Requests about Google's processing should be made through Google's tools linked above.</p>
-    </section>
-
-    <section>
-        <h2>12. Changes to this policy</h2>
-        <p>We may update this policy when the game, integrated services or legal requirements change. The latest version will be published at this URL with an updated date.</p>
-    </section>
-
-    <section>
-        <h2>13. Contact</h2>
-        <div class="contact-info">
-            <p><strong>Developer / controller:</strong> Raes Solutions</p>
-            <p><strong>Contact email:</strong> <span style="color:#a34b00">raesnv@outlook.com</span></p>
-            <p><strong>Business/postal address:</strong> <span style="color:#a34b00">Pastoor steenssensstraat ,Beveren.</span></p>
-            <p>For privacy questions or requests, contact us using the email above once published.</p>
+        <div class="stats">
+            <div class="glass stat">
+                <b>On your device</b>
+                <span>Levels, stars, settings and progress stay local.</span>
+            </div>
+            <div class="glass stat">
+                <b>Ads &amp; purchases</b>
+                <span>Google AdMob and Play Billing, with UMP consent in the EEA.</span>
+            </div>
+            <div class="glass stat">
+                <b>Analytics by choice</b>
+                <span>Firebase stays off until the required consent state is known.</span>
+            </div>
         </div>
-    </section>
 
-    <footer class="footer">
-        <p><strong>Path Slider</strong> · Developed by Raes Solutions<br>© 2026 Raes Solutions. All rights reserved.</p>
-    </footer>
-</main>
+        <div class="glass summary reveal">
+            <p><strong>At a glance:</strong> Path Slider stores game progress on your device. The free game uses Google AdMob advertising, and optional purchases use Google Play Billing. After the required consent in the EEA, UK and Switzerland — or after Google’s consent flow establishes that those rules do not apply — Google Firebase may process analytics, crash, performance and related configuration data. We do not run an account system or collect your progress on our own servers.</p>
+        </div>
+
+        <aside class="glass consent-callout reveal">
+            <h2>Consent in version 1.0.4</h2>
+            <p>Firebase Analytics, Crashlytics, Performance Monitoring and Remote Config collection stay off until the required consent state is known. Advertising consent is not treated as analytics consent. Loading the consent form still requires a connection to Google. This policy does <strong>not</strong> claim that zero network traffic occurs before you tap a choice: comprehensive packet capture has not been performed.</p>
+        </aside>
+
+        <div class="layout">
+        <nav class="toc" id="toc" aria-label="Privacy policy sections">
+            <a href="#overview"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#8EC5FF" stroke-width="2"><path d="M4 12h16M12 4v16"/></svg></span>1. Overview</a>
+            <a href="#device"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>2. On your device</a>
+            <a href="#ads"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#9B6BFF" stroke-width="2"><path d="M3 11v2a8 8 0 0 0 16 0v-2"/><rect x="2" y="7" width="20" height="6" rx="2"/></svg></span>3. Advertising</a>
+            <a href="#firebase"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></span>4. Firebase</a>
+            <a href="#purchases"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></span>5. Purchases</a>
+            <a href="#sharing"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#8EC5FF" stroke-width="2"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 11l8-4M8 13l8 4"/></svg></span>6. Sharing</a>
+            <a href="#legal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2"><path d="M12 3v18M5 8h14M7 8c0 5 5 8 5 8s5-3 5-8"/></svg></span>7. Legal bases</a>
+            <a href="#children"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FF5C7A" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M5 20c1.5-4 4-6 7-6s5.5 2 7 6"/></svg></span>8. Children</a>
+            <a href="#rights"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#8EC5FF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></span>9. Your rights</a>
+            <a href="#security"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>10. Security</a>
+            <a href="#retention"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg></span>11. Retention</a>
+            <a href="#changes"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#9B6BFF" stroke-width="2"><path d="M4 12a8 8 0 1 0 3-6.3"/><path d="M4 4v5h5"/></svg></span>12. Changes</a>
+            <a href="#contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></span>13. Contact</a>
+        </nav>
+
+        <article id="policy">
+            <section class="glass card reveal" id="overview">
+                <h2><span class="num">1</span> Overview</h2>
+                <p>Path Slider is an offline puzzle game developed by <strong>RaesNV</strong>. The game does not require an account, and we do not operate servers that receive your game progress or other personal data. Your game progress is stored on your device. The free version uses Google AdMob to show advertisements, optional purchases are handled by Google Play, and Google Firebase may process analytics, crash and performance data as described below.</p>
+                <p>Google may process personal data through these services, as explained in this policy.</p>
+            </section>
+
+            <section class="glass card reveal" id="device">
+                <h2><span class="num">2</span> Data stored on your device</h2>
+                <p>Path Slider stores the following data locally:</p>
+                <ul>
+                    <li>Completed levels, stars, best times, statistics, achievements, streaks and hint credits</li>
+                    <li>Settings such as sound, music, vibration and theme</li>
+                    <li>A locally cached indication of your “Remove Ads” purchase status</li>
+                    <li>Generated puzzle cache</li>
+                </ul>
+                <p>We do not receive this data. Depending on your Android backup settings, some app data may be included in a Google account backup (Android Auto Backup) or transferred to another device. Clearing app data or uninstalling normally removes local data, but copies in backups may remain subject to Google's backup settings and retention.</p>
+            </section>
+
+            <section class="glass card reveal" id="ads">
+                <h2><span class="num">3</span> Advertising — Google AdMob</h2>
+                <p>Unless you have purchased “Remove Ads”, Path Slider may display banner ads, interstitial ads and optional rewarded video ads supplied by Google AdMob (Google Ireland Limited and/or Google LLC).</p>
+                <p>To deliver, measure and secure advertisements, Google's Mobile Ads SDK may process:</p>
+                <ul>
+                    <li>Device identifiers, potentially including your Android advertising ID</li>
+                    <li>IP address, which may indicate an approximate location</li>
+                    <li>Device and application details, such as device model, operating system, language and app version</li>
+                    <li>Ad impressions, clicks, interactions and diagnostic information</li>
+                </ul>
+                <h3>Consent and privacy choices</h3>
+                <p>For users in the European Economic Area, United Kingdom and Switzerland, the app is designed to request advertising consent through Google's User Messaging Platform (UMP) / IAB Transparency and Consent Framework (TCF) before requesting ads where required. You may accept, reject or manage available consent choices. Declining personalised advertising does not prevent you from playing. Limited or non-personalised ads may still appear where legally permitted.</p>
+                <p>Google’s consent form itself must be loaded from Google before you can make a choice. After that flow finishes, ads may be requested when Google reports that ads can be requested.</p>
+                <p>You can revisit your options using <strong>Settings → Ad privacy choices</strong> (where available in the installed version). Android also provides advertising ID controls in its privacy settings; the exact menu varies by device.</p>
+                <p>Rewarded video ads are optional and may provide an in-game reward such as a hint or extra time. Optional rewarded ads can remain available even if you purchase “Remove Ads”, which removes banners and interstitials.</p>
+                <p>For more details, see <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">How Google uses information from apps using its services</a> and the <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="firebase">
+                <h2><span class="num">4</span> Analytics, crash and performance — Google Firebase</h2>
+                <p>If you allow analytics in the consent choices — or if you are outside a region where the consent form is required and the consent flow has established that GDPR does not apply — the app may send limited event, crash and performance data to Google Firebase / Google Analytics (Google Ireland Limited and/or Google LLC). This helps us understand how people play, whether the app is stable, and how it performs. It is not used to create a Path Slider account.</p>
+                <p>The following Google Firebase products may be used:</p>
+                <ul>
+                    <li><strong>Firebase Analytics / Google Analytics for Firebase</strong> — gameplay and usage events</li>
+                    <li><strong>Firebase Crashlytics</strong> — crash reports and related diagnostic data</li>
+                    <li><strong>Firebase Performance Monitoring</strong> — app start and performance traces</li>
+                    <li><strong>Firebase Remote Config</strong> — analytics-only flags (for example whether extra move logging is on). It does not change puzzles, ads, hints or purchases</li>
+                    <li><strong>Firebase Installations</strong> — an installation identifier used internally by the Firebase products above</li>
+                </ul>
+                <p>Firebase may process:</p>
+                <ul>
+                    <li>An app instance identifier (reset when you uninstall the app or when collection is disabled)</li>
+                    <li>A Firebase Installation ID when analytics collection is enabled</li>
+                    <li>Gameplay events such as level start/end, tutorial progress, screen views and ad-load results (not puzzle solutions)</li>
+                    <li>Coarse device data Google collects automatically: country derived from IP address, language, device model, operating system and app version</li>
+                    <li>Crash stacks (Firebase Crashlytics) and performance traces (Firebase Performance Monitoring)</li>
+                    <li>The Android advertising ID only when ad-related consent also allows it</li>
+                </ul>
+                <p>We do not send your name, email address, precise GPS location, purchase tokens, payment details or local puzzle solutions to Firebase.</p>
+                <h3>Consent in the EEA, United Kingdom and Switzerland</h3>
+                <p>Analytics, Crashlytics, Performance Monitoring and Remote Config fetching are off by default. In version 1.0.4 they also stay off while GDPR status is still unknown and while the UMP consent flow is unfinished. In the EEA, UK and Switzerland, the legal basis is consent (Article 6(1)(a) GDPR), collected through the same Google UMP / TCF form used for advertising. <strong>Advertising consent is not treated as analytics consent.</strong> Collection stays off until you grant the measurement purposes (TCF Purpose 1 together with Purpose 8 or 10).</p>
+                <p>Outside those regions, this processing may start after the UMP flow finishes and writes that GDPR does not apply, without a separate analytics form. It does not start merely because the app launched.</p>
+                <p>Firebase products may initialise on the device before you tap the form so that collection can be kept denied. That is not the same as sending analytics events. UMP still contacts Google to show the message. Play Billing may connect independently of analytics consent. We have not performed comprehensive packet capture of every SDK, so this policy does not claim that zero network requests occur before consent.</p>
+                <p>You can withdraw consent in <strong>Settings → Ad privacy choices</strong>. You can also reset your advertising ID in Android settings, or uninstall the app.</p>
+                <p>More information: <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">Firebase privacy information</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="purchases">
+                <h2><span class="num">5</span> In-app purchases — Google Play Billing</h2>
+                <p>Path Slider offers an optional one-time “Remove Ads” purchase, processed by Google Play. We do not receive your payment card details. The app receives purchase status and a purchase token from Google Play to verify and restore purchases. Google's own handling of payment information is described in its <a href="https://play.google.com/about/play-terms/" rel="noopener noreferrer" target="_blank">Google Play Terms of Service</a> and <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="sharing">
+                <h2><span class="num">6</span> Sharing and third parties</h2>
+                <p>The “Share result” feature opens the Android share sheet with game-related text. No result is shared unless you choose a destination and complete the sharing action.</p>
+                <p>We do not sell your personal data. We do not send your local game progress to our own servers. We share data with the following Google service providers, as described in this policy:</p>
+                <ul>
+                    <li><strong>Google AdMob</strong> — advertising</li>
+                    <li><strong>Google Play Billing</strong> — the optional “Remove Ads” purchase</li>
+                    <li><strong>Google Firebase / Google Analytics</strong> — analytics, crash reporting, performance monitoring, Remote Config and related installation identifiers, when analytics consent is granted or when a consent form is not required after UMP has finished</li>
+                </ul>
+                <p>Any app you choose through Android's share sheet has its own privacy practices.</p>
+            </section>
+
+            <section class="glass card reveal" id="legal">
+                <h2><span class="num">7</span> Legal bases under the GDPR</h2>
+                <ul>
+                    <li><strong>Local gameplay data:</strong> processing necessary to provide the game you request (Article 6(1)(b) GDPR), where personal data processing is involved.</li>
+                    <li><strong>Personalised advertising and consent-based device access:</strong> consent (Article 6(1)(a) GDPR and applicable ePrivacy rules), which can be withdrawn.</li>
+                    <li><strong>Analytics, crash reporting, performance monitoring, Remote Config and Firebase Installations used for those products:</strong> consent (Article 6(1)(a) GDPR) in the EEA, UK and Switzerland. Outside those regions, this processing may start after the UMP flow finishes, without a separate analytics form.</li>
+                    <li><strong>Purchases:</strong> performance of a contract (Article 6(1)(b) GDPR).</li>
+                </ul>
+                <p>Google may act as an independent controller for certain processing and describes its own legal bases in its privacy documentation. Other advertising or analytics processing, where applicable, depends on the purposes and choices disclosed in the consent interface.</p>
+            </section>
+
+            <section class="glass card reveal" id="children">
+                <h2><span class="num">8</span> Children</h2>
+                <p>Path Slider is not specifically directed to children under 13 or the applicable age of digital consent in their country. We do not knowingly request personal information directly from children. If you have concerns about a child's information, please contact us. Age-related obligations and ad settings must be configured consistently with the app's actual target audience in Google Play and AdMob.</p>
+            </section>
+
+            <section class="glass card reveal" id="rights">
+                <h2><span class="num">9</span> Your rights and choices</h2>
+                <p>Depending on applicable law, you may have rights to access, rectify, erase, restrict or port personal data, object to certain processing, withdraw consent and lodge a complaint with your data protection authority.</p>
+                <p>Because we do not maintain a user database, you can generally remove locally stored game data via <strong>Android Settings → Apps → Path Slider → Storage → Clear data</strong> or by uninstalling the app. Backup copies are managed through your device and Google account settings.</p>
+                <p>For data processed by Google AdMob, Google Play or Google Firebase / Google Analytics, consult the <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a>, <a href="https://myaccount.google.com/" rel="noopener noreferrer" target="_blank">Google Account</a> and <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">Firebase privacy information</a>. You can withdraw in-app consent via <strong>Settings → Ad privacy choices</strong>.</p>
+                <p>If you are in Belgium, you can also contact the <a href="https://www.dataprotectionauthority.be/" rel="noopener noreferrer" target="_blank">Belgian Data Protection Authority</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="security">
+                <h2><span class="num">10</span> Security and international processing</h2>
+                <p>Local game data is kept in Android app storage, subject to Android's platform security protections. Google SDKs communicate over encrypted connections (HTTPS). No technical safeguard can guarantee absolute security.</p>
+                <p>Google services may process data outside your country. Please consult Google's privacy information for details of international transfers and applicable safeguards.</p>
+            </section>
+
+            <section class="glass card reveal" id="retention">
+                <h2><span class="num">11</span> Retention and deletion</h2>
+                <ul>
+                    <li><strong>Local game data:</strong> generally remains until you clear the app data or uninstall the game, subject to device backups.</li>
+                    <li><strong>Google AdMob and Google Play:</strong> we do not set the retention periods for data independently processed by those services; consult Google's privacy documentation and available controls.</li>
+                    <li><strong>Google Firebase / Google Analytics:</strong> retention follows the retention setting of the Google Analytics property. Crashlytics crash reports and Performance Monitoring traces are retained according to Google's product settings. App instance identifiers are reset when you uninstall the app or when collection is disabled.</li>
+                </ul>
+                <p>To delete local game data, use Android Settings → Apps → Path Slider → Storage → Clear data, or uninstall the app. Requests about Google's processing should be made through Google's tools linked above.</p>
+            </section>
+
+            <section class="glass card reveal" id="changes">
+                <h2><span class="num">12</span> Changes to this policy</h2>
+                <p>We may update this policy when the game, integrated services or legal requirements change. The latest version will be published at this URL with an updated date.</p>
+            </section>
+
+            <section class="glass card reveal" id="contact">
+                <h2><span class="num">13</span> Contact</h2>
+                <div class="contact">
+                    <p><strong>Developer / controller:</strong> Raes Solutions</p>
+                    <p><strong>Contact email:</strong> <a href="mailto:raesnv@outlook.com"><span>raesnv@outlook.com</span></a></p>
+                    <p><strong>Business/postal address:</strong> <span>Pastoor steenssensstraat ,Beveren.</span></p>
+                    <p>For privacy questions or requests, contact us using the email above once published.</p>
+                </div>
+            </section>
+        </article>
+        </div>
+
+        <footer>
+            <img src="privacy-assets/app-icon.svg" width="48" height="48" alt="Path Slider">
+            <p><strong>Path Slider</strong> · Developed by Raes Solutions<br>© 2026 Raes Solutions. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+            var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+            if ("IntersectionObserver" in window) {
+                var tocIo = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        links.forEach(function (link) {
+                            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+                        });
+                    });
+                }, { rootMargin: "-22% 0px -68% 0px", threshold: 0 });
+                sections.forEach(function (section) { tocIo.observe(section); });
+            }
+        })();
+    </script>
 </body>
 </html>
