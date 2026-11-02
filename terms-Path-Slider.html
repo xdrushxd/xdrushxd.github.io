@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Terms of Service for Path Slider, an Android puzzle game by Raes Solutions. Rules for playing, Path Coins, purchases, rewards and events.">
+    <meta name="theme-color" content="#0A0F2C">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Terms of Service — Path Slider">
+    <meta property="og:description" content="Fair play, clear rules. The terms for playing and buying in Path Slider.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xdrushxd.github.io/terms-Path-Slider.html">
+    <meta property="og:image" content="https://xdrushxd.github.io/privacy-assets/app-icon.svg">
+    <title>Terms of Service — Path Slider</title>
+    <link rel="icon" href="privacy-assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="privacy-assets/app-icon.svg">
+    <link rel="canonical" href="https://xdrushxd.github.io/terms-Path-Slider.html">
+    <style>
+        :root {
+            --bg-top: #0A0F2C;
+            --bg-bottom: #1B1145;
+            --glow: #3D8BFF;
+            --cyan: #22D3EE;
+            --violet: #9B6BFF;
+            --card: #161D45;
+            --card-border: rgba(255, 255, 255, 0.15);
+            --board: #111738;
+            --cell: #1D2552;
+            --text: #FFFFFF;
+            --muted: #B4BBD9;
+            --gold: #FFD84D;
+            --danger: #FF5C7A;
+            --success: #3DDC97;
+            --link: #8EC5FF;
+            --radius: 24px;
+            --max: 1120px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-top);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; height: auto; }
+        a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
+        a:hover { color: var(--cyan); }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -48px;
+            background: var(--gold);
+            color: var(--bg-top);
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 800;
+            z-index: 30;
+        }
+        .skip:focus { top: 12px; }
+
+        .atmosphere {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            pointer-events: none;
+        }
+        .grid-dots {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.4px, transparent 1.5px);
+            background-size: 42px 42px;
+            background-position: 18px 22px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 70%);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: drift 14s linear infinite alternate;
+        }
+        .orb-a {
+            width: min(78vw, 560px);
+            height: min(78vw, 560px);
+            left: -10%;
+            top: 4%;
+            background: radial-gradient(circle, rgba(61, 139, 255, 0.22), transparent 70%);
+        }
+        .orb-b {
+            width: min(82vw, 600px);
+            height: min(82vw, 600px);
+            right: -16%;
+            bottom: 4%;
+            background: radial-gradient(circle, rgba(155, 107, 255, 0.24), transparent 70%);
+            animation-delay: -7s;
+        }
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(12%, 8%); }
+        }
+
+        .wrap {
+            width: min(var(--max), calc(100% - 28px));
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 14px 0 80px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 8px 8px 10px;
+            margin-bottom: 28px;
+            border-radius: 999px;
+            background: rgba(22, 29, 69, 0.82);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(18px);
+            position: sticky;
+            top: 10px;
+            z-index: 20;
+            flex-wrap: nowrap;
+            min-width: 0;
+            overflow: visible;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            text-decoration: none;
+            min-width: 0;
+        }
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 18px rgba(61, 139, 255, 0.35);
+        }
+        .brand-name {
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            font-size: 0.78rem;
+            background: linear-gradient(90deg, #fff, var(--glow), var(--violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            white-space: nowrap;
+        }
+        .top-actions { display: flex; gap: 6px; flex-wrap: nowrap; justify-content: flex-end; flex-shrink: 0; }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.84rem;
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            background: rgba(22, 29, 69, 0.9);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .pill.primary {
+            background: linear-gradient(90deg, var(--glow), var(--violet));
+            border-color: transparent;
+            box-shadow: 0 8px 24px rgba(61, 139, 255, 0.28);
+        }
+        .pill:hover { transform: translateY(-1px); }
+
+        .hero {
+            display: grid;
+            gap: 32px;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .kicker {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 8vw, 4.4rem);
+            line-height: 1.02;
+            letter-spacing: -0.045em;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+        h1 span {
+            background: linear-gradient(90deg, #fff, var(--glow), var(--violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .lede {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 38rem;
+            margin-bottom: 18px;
+            overflow-wrap: break-word;
+        }
+        .meta { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chip {
+            border-radius: 999px;
+            padding: 6px 12px;
+            background: rgba(255, 216, 77, 0.12);
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .chip.quiet {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+        }
+
+        .board-wrap {
+            justify-self: center;
+            width: min(100%, 340px);
+            padding: 16px;
+            border-radius: 28px;
+            background: var(--board);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 18px 50px rgba(61, 139, 255, 0.2);
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            position: relative;
+        }
+        .cell {
+            aspect-ratio: 1;
+            background: var(--cell);
+            border-radius: 16px;
+            animation: fillCell 5.4s ease-in-out infinite;
+        }
+        .cell:nth-child(1) { animation-delay: 0s; }
+        .cell:nth-child(2) { animation-delay: 0.28s; }
+        .cell:nth-child(3) { animation-delay: 0.56s; }
+        .cell:nth-child(6) { animation-delay: 0.84s; }
+        .cell:nth-child(5) { animation-delay: 1.12s; }
+        .cell:nth-child(4) { animation-delay: 1.4s; }
+        .cell:nth-child(7) { animation-delay: 1.68s; }
+        .cell:nth-child(8) { animation-delay: 1.96s; }
+        .cell:nth-child(9) { animation-delay: 2.24s; }
+        @keyframes fillCell {
+            0%, 8% { background: var(--cell); box-shadow: none; }
+            18%, 72% { background: #2A3A72; box-shadow: inset 0 0 0 1px rgba(61,139,255,0.18); }
+            88%, 100% { background: var(--cell); box-shadow: none; }
+        }
+        .path {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            pointer-events: none;
+        }
+        .path-glow, .path-line {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .path-glow {
+            stroke: var(--glow);
+            stroke-width: 18;
+            opacity: 0.22;
+        }
+        .path-line {
+            stroke: url(#heroPath);
+            stroke-width: 9;
+            stroke-dasharray: 620;
+            stroke-dashoffset: 620;
+            animation: draw 5.4s ease-in-out infinite;
+        }
+        @keyframes draw {
+            0% { stroke-dashoffset: 620; }
+            55% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 0; }
+        }
+        .token {
+            position: absolute;
+            width: 28%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+        .token.start {
+            background: var(--gold);
+            color: var(--bg-top);
+            left: 4%;
+            top: 4%;
+            box-shadow: 0 0 0 8px rgba(255, 216, 77, 0.16);
+            animation: pulse 1.1s ease-in-out infinite alternate;
+        }
+        .token.end {
+            background: #fff;
+            color: var(--violet);
+            right: 4%;
+            bottom: 4%;
+            box-shadow: inset 0 0 0 6px var(--violet);
+        }
+        @keyframes pulse {
+            from { box-shadow: 0 0 0 6px rgba(255, 216, 77, 0.12); }
+            to { box-shadow: 0 0 0 11px rgba(255, 216, 77, 0.28); }
+        }
+        .board-caption {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-top: 10px;
+            letter-spacing: 0.04em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+        .stat {
+            padding: 16px 18px;
+        }
+        .stat b {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .stat span { color: var(--muted); font-size: 0.92rem; }
+
+        .glass {
+            background: rgba(22, 29, 69, 0.82);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 22px;
+        }
+
+        .summary strong { color: var(--gold); }
+
+        .consent-callout {
+            background: linear-gradient(180deg, rgba(61, 139, 255, 0.16), rgba(22, 29, 69, 0.9));
+            border: 1px solid rgba(61, 139, 255, 0.4);
+            box-shadow: 0 0 24px rgba(61, 139, 255, 0.12);
+            margin: 16px 0 28px;
+        }
+        .consent-callout h2 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+            color: var(--cyan);
+        }
+
+        .layout {
+            display: grid;
+            gap: 22px;
+        }
+        nav.toc {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            align-content: start;
+        }
+        nav.toc a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            text-decoration: none;
+            background: rgba(22, 29, 69, 0.75);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 10px 12px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            min-width: 0;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        nav.toc a:hover, nav.toc a.active { border-color: var(--glow); }
+        nav.toc a.active { box-shadow: 0 0 0 1px rgba(61, 139, 255, 0.35); }
+
+        .icon {
+            width: 28px;
+            height: 28px;
+            flex: none;
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            background: rgba(61, 139, 255, 0.18);
+        }
+        .icon svg { width: 16px; height: 16px; }
+
+        article section.card {
+            margin-bottom: 16px;
+            padding: 22px 22px 8px;
+        }
+        .reveal { opacity: 1; transform: none; }
+
+        h2 {
+            font-size: 1.28rem;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex: none;
+            background: #F5F7FF;
+            color: var(--bg-top);
+            font-size: 0.86rem;
+            font-weight: 800;
+            box-shadow: 0 0 0 3px rgba(255, 216, 77, 0.18);
+        }
+        h3 {
+            font-size: 1.02rem;
+            margin: 16px 0 8px;
+            color: var(--gold);
+        }
+        p, ul { margin-bottom: 14px; color: var(--muted); }
+        p strong, li strong { color: var(--text); }
+        ul { padding-left: 1.15rem; }
+        li { margin-bottom: 8px; }
+        li::marker { color: var(--glow); }
+
+        .contact {
+            background: rgba(255, 216, 77, 0.08);
+            border: 1px solid rgba(255, 216, 77, 0.28);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .contact p { color: var(--text); margin-bottom: 8px; }
+        .contact span { color: var(--gold); }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 36px;
+            padding-top: 22px;
+            border-top: 1px solid var(--card-border);
+        }
+        footer img {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+        }
+        footer strong { color: var(--text); }
+
+        @media (max-width: 720px) {
+            .brand-name { display: none; }
+            .topbar {
+                border-radius: 20px;
+                backdrop-filter: none;
+                padding: 8px;
+                flex-wrap: wrap;
+            }
+            .top-actions {
+                margin-left: auto;
+            }
+            .pill { padding: 8px 12px; font-size: 0.8rem; }
+            h1 { font-size: clamp(2rem, 11vw, 3.1rem); }
+            .lede { font-size: 0.98rem; }
+        }
+        @media (min-width: 560px) and (max-width: 979px) {
+            nav.toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 720px) {
+            .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (min-width: 980px) {
+            .hero { grid-template-columns: 1.12fr 0.88fr; }
+            .layout { grid-template-columns: 280px minmax(0, 1fr); align-items: start; }
+            nav.toc {
+                position: sticky;
+                top: 78px;
+                grid-template-columns: 1fr;
+            }
+            .wrap { padding-top: 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .orb, .path-line, .path-glow, .cell, .token.start, .pill { animation: none !important; }
+            .path-line { stroke-dashoffset: 0; }
+            .cell { background: #2A3A72; }
+            .pill:hover { transform: none; }
+            nav.toc a:hover { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip" href="#policy">Skip to the terms</a>
+    <div class="atmosphere" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+    </div>
+    <div class="grid-dots" aria-hidden="true"></div>
+
+    <div class="wrap">
+        <header class="topbar">
+            <a class="brand" href="#top">
+                <img src="privacy-assets/logo.svg" width="40" height="40" alt="">
+                <span class="brand-name">PATH SLIDER</span>
+            </a>
+            <div class="top-actions">
+                <a class="pill" href="#toc">Contents</a>
+                <a class="pill primary" href="#contact">Contact</a>
+            </div>
+        </header>
+
+        <section class="hero" id="top">
+            <div>
+                <p class="kicker">Raes Solutions · Android puzzle game</p>
+                <h1>Fair Play.<br><span>Clear Rules.</span></h1>
+                <p class="lede">These terms explain how you may use Path Slider, how Path Coins, purchases, event rewards and the pre-registration reward work, and what you can expect from us.</p>
+                <div class="meta">
+                    <span class="chip">Last updated: 2 November 2026</span>
+                    <span class="chip quiet">Applies to all versions</span>
+                </div>
+            </div>
+            <div class="board-wrap" aria-hidden="true">
+                <div class="board">
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    <svg class="path" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="heroPath" x1="0" y1="0" x2="100" y2="100">
+                                <stop offset="0" stop-color="#3D8BFF"/>
+                                <stop offset="0.55" stop-color="#22D3EE"/>
+                                <stop offset="1" stop-color="#9B6BFF"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="path-glow" d="M16.5 16.5 H83.5 V50 H16.5 V83.5 H83.5"/>
+                        <path class="path-line" d="M16.5 16.5 H83.5 V50 H16.5 V83.5 H83.5"/>
+                    </svg>
+                    <span class="token start">1</span>
+                    <span class="token end">2</span>
+                </div>
+                <p class="board-caption">Draw one line through every cell</p>
+            </div>
+        </section>
+
+        <div class="stats">
+            <div class="glass stat">
+                <b>Play fair</b>
+                <span>No cheats, bots or bug abuse. Leaderboards stay honest.</span>
+            </div>
+            <div class="glass stat">
+                <b>Coins are for fun</b>
+                <span>Path Coins and items have no real-world value.</span>
+            </div>
+            <div class="glass stat">
+                <b>Purchases via Google Play</b>
+                <span>Restorable on your account, refunds through Google.</span>
+            </div>
+        </div>
+
+        <div class="glass summary reveal">
+            <p><strong>At a glance:</strong> Path Slider is free to play with optional ads and optional purchases through Google Play. Path Coins and in-game items have no monetary value and cannot be traded. Event items are limited in time. Players who pre-registered get the exclusive First Light skin and 1,000 Path Coins once. Your legal rights as a consumer always stay intact.</p>
+        </div>
+
+        <div class="layout">
+        <nav class="toc" id="toc" aria-label="Terms sections">
+            <a href="#about"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#8EC5FF" stroke-width="2"><path d="M4 12h16M12 4v16"/></svg></span>1. About these terms</a>
+            <a href="#licence"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"/></svg></span>2. Your licence to play</a>
+            <a href="#fair"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>3. Fair play</a>
+            <a href="#coins"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg></span>4. Path Coins and in-game items</a>
+            <a href="#purchases"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#9B6BFF" stroke-width="2"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></span>5. Purchases with real money</a>
+            <a href="#ads"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l4 2-4 2z"/></svg></span>6. Advertising and rewarded videos</a>
+            <a href="#events"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FF5C7A" stroke-width="2"><path d="M4 10h16v10H4z"/><path d="M12 10v10M4 14h16"/><path d="M12 10c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg></span>7. Events, limited items and gifts</a>
+            <a href="#prereg"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><circle cx="12" cy="13" r="4"/><path d="M12 3v3M4.9 6.9l2.1 2.1M19.1 6.9 17 9M3 17h18"/></svg></span>8. Pre-registration reward</a>
+            <a href="#playgames"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2"><rect x="3" y="7" width="18" height="11" rx="5"/><path d="M8 11v3M6.5 12.5h3"/><circle cx="16" cy="11.5" r="1"/><circle cx="17.5" cy="14" r="1"/></svg></span>9. Google Play Games</a>
+            <a href="#changes"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#9B6BFF" stroke-width="2"><path d="M4 12a8 8 0 1 0 3-6.3"/><path d="M4 4v5h5"/></svg></span>10. Changes to the game and these terms</a>
+            <a href="#liability"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#8EC5FF" stroke-width="2"><path d="M12 3v18M5 8h14M7 8c0 5 5 8 5 8s5-3 5-8"/></svg></span>11. Availability and liability</a>
+            <a href="#law"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>12. Applicable law</a>
+            <a href="#contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></span>13. Contact</a>
+        </nav>
+
+        <article id="policy">
+            <section class="glass card reveal" id="about">
+                <h2><span class="num">1</span> About these terms</h2>
+                <p>These Terms of Service (“terms”) apply to the Path Slider game for Android (“the game”), published by <strong>Raes Solutions</strong> (“we”, “us”). By downloading, installing or playing the game you agree to these terms. If you do not agree, please do not use the game.</p>
+                <p>You also use Google Play to download the game and to make purchases, so the <a href="https://play.google.com/about/play-terms/" rel="noopener noreferrer" target="_blank">Google Play Terms of Service</a> apply as well. How we handle personal data is explained in our <a href="privacy-policy-Path-Slider.html">Privacy Policy</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="licence">
+                <h2><span class="num">2</span> Your licence to play</h2>
+                <p>We give you a personal, non-exclusive, non-transferable and revocable licence to install the game on devices you own or control and to play it for your own, non-commercial entertainment.</p>
+                <p>The game, its puzzles, graphics, sounds, skins and other content belong to Raes Solutions or its licensors. You may not copy, sell, rent, modify, decompile or redistribute the game, except where the law allows this.</p>
+            </section>
+
+            <section class="glass card reveal" id="fair">
+                <h2><span class="num">3</span> Fair play</h2>
+                <p>Please play fair. You agree not to:</p>
+                <ul>
+                    <li>use cheats, bots, modified versions of the game or tools that change how it works</li>
+                    <li>exploit bugs to gain Path Coins, items or leaderboard scores; please report them to us instead</li>
+                    <li>manipulate leaderboards or achievements, or interfere with ads, purchases or other players</li>
+                </ul>
+                <p>If you break these rules, we may reset affected progress, remove scores from leaderboards or remove items obtained by abuse.</p>
+            </section>
+
+            <section class="glass card reveal" id="coins">
+                <h2><span class="num">4</span> Path Coins and in-game items</h2>
+                <p>You earn Path Coins by playing, for example through daily missions, events, Coin Rush and optional rewarded videos. You can spend them on cosmetic items in the shop, such as path skins, effects, board themes and number styles.</p>
+                <ul>
+                    <li>Path Coins and in-game items have <strong>no real-world monetary value</strong>. They cannot be bought with money, exchanged for money, or transferred to other players.</li>
+                    <li>They give you a licence to use them in the game; you do not own them as property.</li>
+                    <li>Cosmetic items change how the game looks. They never change puzzles, scores or other gameplay rules.</li>
+                    <li>We may adjust prices in Path Coins, rewards, missions and the shop to keep the game balanced.</li>
+                </ul>
+                <p>Your progress, Path Coins and items are stored on your device. If you use Google Play Games, a cloud save in your Google account can restore them on another device. Without a cloud save, uninstalling the game or clearing its data removes them, and we cannot restore them.</p>
+            </section>
+
+            <section class="glass card reveal" id="purchases">
+                <h2><span class="num">5</span> Purchases with real money</h2>
+                <p>The game offers optional one-time purchases through Google Play Billing: “Remove Ads”, which also makes you a Premium player, and premium cosmetic items such as path skins, a skin pack and seasonal number styles. Prices are shown in Google Play before you buy, including VAT where applicable.</p>
+                <ul>
+                    <li>Payment, receipts and refunds are handled by Google Play under its own terms and refund policies.</li>
+                    <li>Purchases are linked to your Google account and can be restored with <strong>Restore purchases</strong> on any device that uses the same account.</li>
+                    <li>A refunded or cancelled purchase is removed from the game.</li>
+                    <li>Seasonal number styles can only be bought while their event runs. Once bought, you can keep using them all year.</li>
+                </ul>
+                <h3>Right of withdrawal (EU)</h3>
+                <p>Purchases are digital content that is delivered immediately. When you buy, you agree that delivery starts right away and you acknowledge that you therefore lose your 14-day right of withdrawal under EU consumer law, as far as the law allows. This does not affect your rights if the content is faulty or not delivered.</p>
+            </section>
+
+            <section class="glass card reveal" id="ads">
+                <h2><span class="num">6</span> Advertising and rewarded videos</h2>
+                <p>The free version shows ads from Google AdMob. “Remove Ads” removes banners and interstitial ads for good.</p>
+                <p>Rewarded videos are always optional and only start when you choose to watch one. You receive the reward only after the video has been completed, as confirmed by Google. If a video is not available or does not finish, no reward is given. Rewarded videos can stay available after you buy “Remove Ads”.</p>
+            </section>
+
+            <section class="glass card reveal" id="events">
+                <h2><span class="num">7</span> Events, limited items and gifts</h2>
+                <p>We run seasonal events for a limited time. Some events are regional and are chosen from your country (see the Privacy Policy). Event rewards, including limited skins, can only be earned while the event runs and cannot be bought. We may change, extend, shorten or skip events.</p>
+                <p>From time to time we may offer gifts, such as coins for early players or free hints. Each gift can be claimed as described in the game, usually once per player.</p>
+            </section>
+
+            <section class="glass card reveal" id="prereg">
+                <h2><span class="num">8</span> Pre-registration reward</h2>
+                <p>Players who pre-registered for Path Slider on Google Play before its launch receive the exclusive <strong>First Light</strong> path skin and <strong>1,000 Path Coins</strong>.</p>
+                <ul>
+                    <li><strong>Who:</strong> players who pre-registered on Google Play with the Google account they use to install the game. Eligibility is decided by Google Play.</li>
+                    <li><strong>How:</strong> Google Play delivers the reward the first time you open the game after installing it. The game then shows a thank-you message with which you claim it.</li>
+                    <li><strong>Once:</strong> the reward is given once per Google account. The skin stays available on every device with that account; the coins are paid once.</li>
+                    <li><strong>Not for sale:</strong> First Light cannot be bought, has no monetary value and cannot be exchanged for money or transferred.</li>
+                    <li>The availability and delivery of the reward depend on Google Play. If you believe you did not receive it, contact us.</li>
+                </ul>
+            </section>
+
+            <section class="glass card reveal" id="playgames">
+                <h2><span class="num">9</span> Google Play Games</h2>
+                <p>Sign-in with Google Play Games is optional. It adds achievements, leaderboards and a cloud save. Your Play Games name is shown next to your scores on leaderboards. Google Play Games is a Google service with its own terms.</p>
+            </section>
+
+            <section class="glass card reveal" id="changes">
+                <h2><span class="num">10</span> Changes to the game and these terms</h2>
+                <p>We improve the game regularly. We may add, change or remove levels, modes, events, items and features. We will not remove purchased items without a good reason, such as a refund, abuse or a legal requirement.</p>
+                <p>We may update these terms when the game or the law changes. The latest version is always published at this address with a new date. If you keep playing after a change, the new terms apply.</p>
+            </section>
+
+            <section class="glass card reveal" id="liability">
+                <h2><span class="num">11</span> Availability and liability</h2>
+                <p>We do our best to keep the game working well, but it is provided “as is” and “as available”. We cannot promise that it will always be free of errors or interruptions, or that online services such as ads, purchases, leaderboards and cloud save will always be available.</p>
+                <p>As far as the law allows, we are not liable for indirect damage, such as lost progress, lost Path Coins or lost items caused by uninstalling, clearing data, device problems or third-party services. Nothing in these terms limits liability that cannot be limited by law, or your statutory rights as a consumer.</p>
+            </section>
+
+            <section class="glass card reveal" id="law">
+                <h2><span class="num">12</span> Applicable law</h2>
+                <p>These terms are governed by Belgian law. If you are a consumer living in another country, you keep the protection of the mandatory consumer laws of that country. Disputes go to the competent courts of Belgium, unless mandatory law says otherwise. EU consumers can also use the <a href="https://consumer-redress.ec.europa.eu/" rel="noopener noreferrer" target="_blank">EU consumer redress options</a>.</p>
+            </section>
+
+            <section class="glass card reveal" id="contact">
+                <h2><span class="num">13</span> Contact</h2>
+                <div class="contact">
+                    <p><strong>Publisher:</strong> Raes Solutions</p>
+                    <p><strong>Contact email:</strong> <a href="mailto:raesnv@outlook.com"><span>raesnv@outlook.com</span></a></p>
+                    <p><strong>Business/postal address:</strong> <span>Pastoor steenssensstraat ,Beveren.</span></p>
+                    <p>Questions about these terms, a missing reward or a purchase? Send us an email. For refunds, please also use Google Play's refund options.</p>
+                </div>
+            </section>
+        </article>
+        </div>
+
+        <footer>
+            <img src="privacy-assets/app-icon.svg" width="48" height="48" alt="Path Slider">
+            <p><strong>Path Slider</strong> · Developed by Raes Solutions · <a href="privacy-policy-Path-Slider.html">Privacy Policy</a><br>© 2026 Raes Solutions. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+            var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+            if ("IntersectionObserver" in window) {
+                var tocIo = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        links.forEach(function (link) {
+                            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+                        });
+                    });
+                }, { rootMargin: "-22% 0px -68% 0px", threshold: 0 });
+                sections.forEach(function (section) { tocIo.observe(section); });
+            }
+        })();
+    </script>
+</body>
+</html>
